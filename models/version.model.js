@@ -9,14 +9,10 @@ module.exports = function (mongoose) {
         },
         contents: [{
             title: {
-                type: String,
-                trim: true,
-                required: [true, 'contents.title is required']
+                type: { type: String, trim: true, required: [true, 'contents.title is required'] }
             },
             detail: {
-                type: String,
-                trim: true,
-                required: [true, 'contents.detail is required']
+                type: { type: String, trim: true, required: [true, 'contents.detail is required'] }
             },
             imgs: [{
                 type: String,
