@@ -5,4 +5,8 @@ module.exports = function (router) {
         .post(indexCtrl.hello)
         .put(indexCtrl.hello)
         .delete(indexCtrl.hello);
+
+    router.route('/checkversion')
+    .get(indexCtrl.checkVersion)
+    .post(indexCtrl.createVersion);
 };
