@@ -11,12 +11,14 @@ module.exports = function (mongoose) {
             title: {
                 type: String,
                 trim: true,
-                required: true
+                required: true,
+                default: ''
             },
             detail: {
                 type: String,
                 trim: true,
-                required: true
+                required: true,
+                default: ''
             },
             imgs: [{
                 type: String,
