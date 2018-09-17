@@ -38,5 +38,11 @@ module.exports = function (mongoose) {
         }
     });
 
+    versionScrema.path('contents').validate(function (contents) {
+        if (!contents) { return false }
+        else if (contents.length === 0) { return false }
+        return true;
+    }, 'version needs to have at least one content');
+
     mongoose.model('version', versionScrema);
 };
