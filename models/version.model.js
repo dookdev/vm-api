@@ -7,19 +7,26 @@ module.exports = function (mongoose) {
             trim: true,
             required: [true, 'version is required']
         },
-        contents: [{
-            title: {
-                type: { type: String, trim: true, required: [true, 'contents.title is required'] }
-            },
-            detail: {
-                type: { type: String, trim: true, required: [true, 'contents.detail is required'] }
-            },
-            imgs: [{
-                type: String,
-                trim: true,
-                default: []
-            }]
-        }],
+        contents: {
+            type: [{
+                title: {
+                    type: String,
+                    trim: true,
+                    required: [true, 'contents.title is required']
+                },
+                detail: {
+                    type: String,
+                    trim: true,
+                    required: [true, 'contents.detail is required']
+                },
+                imgs: [{
+                    type: String,
+                    trim: true,
+                    default: []
+                }]
+            }],
+            required: [true, 'contents is required']
+        },
         createDate: {
             type: Date,
             trim: true,
