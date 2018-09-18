@@ -20,7 +20,7 @@ exports.createStore = function (req, res) {
 };
 
 exports.getDeatil = function (req, res) {
-    storeModel.findById(req.body.storeID, 'name businessType desc pic')
+    storeModel.findById(req.storeID, 'name businessType desc pic')
         .exec(function (err, result) {
             if (err) {
                 res.status(404).json(handle.error(err));
