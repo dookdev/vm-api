@@ -19,3 +19,12 @@ exports.encrypt = function (password) {
         return null;
     }
 };
+
+exports.serialNumber = function (prefix, digit) {
+    digit = digit <= 0 || digit > 15 ? 15 : digit;
+    var uuid = Math.random().toString();
+    uuid = uuid.split('.')[1].toString();
+    uuid = uuid.substr(0, digit);
+    uuid = prefix + '-' + uuid;
+    return uuid;
+};
